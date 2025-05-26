@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration Card Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎉 Personalized Celebration Generator</h1>
+            <p class="tagline">Create beautiful Q&A and heartfelt letters in seconds</p>
+        </header>
+        
+        <div class="main-content">
+            <div class="form-section">
+                <h2>✨ Your Information</h2>
+                <div class="form-group">
+                    <label for="userName">Your Full Name</label>
+                    <input type="text" id="userName" placeholder="Jane Doe">
+                </div>
+
+                <div class="form-group">
+                    <label for="partnerName">Partner's Name</label>
+                    <input type="text" id="partnerName" placeholder="John Smith">
+                </div>
+
+                <div class="form-group">
+                    <label for="memories">Special Memories</label>
+                    <textarea id="memories" rows="3" placeholder="Shared secrets, inside jokes, and fond moments..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="questions">Your Questions & Answers</label>
+                    <div class="flex-row">
+                        <input type="text" id="questionInput" placeholder="Type a question..." onkeypress="handleQuestionKeyPress(event)">
+                        <button onclick="addQuestion()">Add Question</button>
+                    </div>
+                    <div id="questionsList" class="questions-list">
+                        <!-- Questions will appear here -->
+                    </div>
+                    <button onclick="clearQuestions()" class="secondary-button">Clear All Questions</button>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <h2>🎁 Your Generated Content</h2>
+                
+                <div class="output-card" id="qaOutput">
+                    <h3>Interview: "About Me"</h3>
+                    <div class="card-content">
+                        <p><strong>Name:</strong> <span id="outputUserName">Jane Doe</span></p>
+                        <div id="qaList">
+                            <!-- Q&A items will be generated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="output-card letter" id="letterOutput">
+                    <h3>💌 Heartfelt Letter</h3>
+                    <div class="card-content">
+                        <p class="letter-recipient">Dear <span id="outputPartnerName">John</span>,</p>
+                        
+                        <p id="openingParagraph">From the moment our paths first crossed, my life has been filled with sunshine, laughter, and an indescribable sense of belonging that only you seem to understand. The world feels different when you're near - it's like everything is just a little more vibrant, a touch more magical.</p>
+                        
+                        <div id="loveQAList">
+                            <!-- Q&A integrated into letter -->
+                        </div>
+                        
+                        <p id="specialMemoriesList"></p>
+                        
+                        <p class="letter-closing">With all my love, now and forever,<br>
+                        <span class="letter-sender" id="finalUserName">Jane Doe</span></p>
+                    </div>
+                </div>
+
+                <div class="control-buttons">
+                    <button onclick="generateContent()">♻️ Regenerate</button>
+                    <button onclick="copyContent()">📋 Copy All</button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Created with ❤️ by <a href="https://www.youware.com/project/x7eytitt9a" target="_blank">YouWare</a> | Advanced relationship templates & utilities</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
